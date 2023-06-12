@@ -1,0 +1,68 @@
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #0065c1;
+  }
+  
+
+  
+  .logo img {
+    width: 50px;
+  }
+  
+  
+  .navbar button {
+    padding: 5px 30px;
+    background: #0065c1;
+    color: white;
+  }
+
+  button{
+    border-radius: 10px;
+  }
+  
+  
+  .heading{
+    align-items: center;
+    padding: 80px 200px ;
+  }
+  
+  
+  .Form{
+    padding: 50px 50px;
+  }
+  
+  
+  footer{
+    border-top: 1px solid #0065c1;
+    padding: 30px 50px;
+  }
+  
+  .footerP{
+    border-top: 1px solid #0065c1;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  
+  .lableStatus{
+    color: red;
+    font-size: small;
+  }
+  
+  input, select, textarea, button{
+    border-color: #0065c1 !important;
+    border-radius: 0 !important;
+  }
+  
+  .checkStatus{
+    color: #0065c1;
+    font-size: 25px;
+  }
+  
+  
+  .containerBox{
+    width: 400px;
+  }
