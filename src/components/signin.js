@@ -31,7 +31,7 @@ function SignIn() {
             <form>
               <div className="">
                 <div className="">
-                  <label for="exampleInputEmail1" className="form-label">
+                  <label htmlFor="exampleInputEmail1" className="form-label">
                     Username
                   </label>
                   <input
@@ -48,7 +48,7 @@ function SignIn() {
               </div>
               <div className="">
                 <div className="">
-                  <label for="exampleInputPassword1" className="form-label">
+                  <label htmlFor="exampleInputPassword1" className="form-label">
                     Password
                   </label>
                   <input type="password" className="form-control" id="password" />

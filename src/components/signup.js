@@ -10,7 +10,7 @@ const SignUp = () => {
   const [DOB, setDOB] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
-  var getCityValue = city.options[city.selectedIndex].value;
+  // var getCityValue = city.options[city.selectedIndex].value;
   const [genderValue, setGenderValue] = useState("");
   var validRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -76,6 +76,7 @@ const SignUp = () => {
     
     if (firstName.length <= 3) {
        setFirstNameError("Enter Valid First Name");
+       console.log("Enter Valid first name");
     }else if (lastName.length <= 3) {
       setLastNameError("Enter a Valid Last Name");
     } else if (phoneNumber.length !== 10 || phoneNumber.value == "") {
@@ -90,14 +91,16 @@ const SignUp = () => {
         setDOBError("Enter a Valid Date Of Birth");
     } else if (address.length <= 0) {
         setAddressError("Enter a Valid Address");
-    } else if (getCityValue == "0") {
-        setCityError("Please Choose Your City");
-    } else if (genderValue == null) {
+    } 
+    // else if (getCityValue == "0") {
+    //     setCityError("Please Choose Your City");
+    // } 
+    else if (genderValue == null) {
         setGenderValueError("Please Choose Your Gender");
     } else {
         setError("Successfully Registration");
+        console.log("Enter Valid first name");
     }
-
     /*var firstName = document.getElementById("firstname").value;
     var lastName = document.getElementById("lastname").value;
     const phoneNumber = document.getElementById("phone").value;
@@ -168,11 +171,11 @@ const SignUp = () => {
           <form>
             <div className="row">
               <h3 className="text-center">Sign Up</h3>
-              <p className="text-center pb-5">Use Your correct credentials</p>
+              <p className="text-center pb-5">Use Your Correct Credentials</p>
 
               <div className="col-12 col-md-4 col-lg-4 px-4">
                 <div className="mb-3">
-                  <label for="exampleInputEmail1" className="form-label">
+                  <label htmlFor="exampleInputEmail1" className="form-label">
                     First&nbsp;Name
                   </label>
                   <input
@@ -189,15 +192,14 @@ const SignUp = () => {
                     aria-describedby="emailHelp"
                   />
                   <label
-                    value={firstNameError}
                     id="firstNameStatus"
                     className="form-label lableStatus"
-                  ></label>
+                  >{firstNameError}</label>
                 </div>
               </div>
               <div className="col-12 col-md-4 col-lg-4 px-4">
                 <div className="mb-3">
-                  <label for="exampleInputEmail1" className="form-label">
+                  <label htmlFor="exampleInputEmail1" className="form-label">
                     Last Name
                   </label>
                   <input
@@ -214,15 +216,14 @@ const SignUp = () => {
                     aria-describedby="emailHelp"
                   />
                   <label
-                  value={lastNameError}
                     id="lastNameStatus"
                     className="form-label lableStatus"
-                  ></label>
+                  >{lastNameError}</label>
                 </div>
               </div>
               <div className="col-12 col-md-4 col-lg-4 px-4">
                 <div className="mb-3">
-                  <label for="exampleInputEmail1" className="form-label">
+                  <label htmlFor="exampleInputEmail1" className="form-label">
                     Contact No.
                   </label>
                   <input
@@ -239,14 +240,13 @@ const SignUp = () => {
                   />
                   <label
                     id="mobileStatus"
-                    value={phoneNumberError}
                     className="form-label lableStatus"
-                  ></label>
+                  >{phoneNumberError}</label>
                 </div>
               </div>
               <div className="col-12 col-md-4 col-lg-4 px-4">
                 <div className="mb-3">
-                  <label for="exampleInputEmail1" className="form-label">
+                  <label htmlFor="exampleInputEmail1" className="form-label">
                     Email-Id
                   </label>
                   <input
@@ -263,15 +263,14 @@ const SignUp = () => {
                     aria-describedby="emailHelp"
                   />
                   <label
-                  value={emailIdError}
                     id="emailStatus"
                     className="form-label lableStatus"
-                  ></label>
+                  >{emailIdError}</label>
                 </div>
               </div>
               <div className="col-12 col-md-4 col-lg-4 px-4">
                 <div className="mb-3">
-                  <label for="exampleInputEmail1" className="form-label">
+                  <label htmlFor="exampleInputEmail1" className="form-label">
                     Username
                   </label>
                   <input
@@ -288,14 +287,13 @@ const SignUp = () => {
                   />
                   <label
                     id="userNameStatus"
-                    value={usernameError}
                     className="form-label lableStatus"
-                  ></label>
+                  >{usernameError}</label>
                 </div>
               </div>
               <div className="col-12 col-md-4 col-lg-4 px-4">
                 <div className="mb-3">
-                  <label for="exampleInputPassword1" className="form-label">
+                  <label htmlFor="exampleInputPassword1" className="form-label">
                     Password
                   </label>
                   <input
@@ -310,15 +308,14 @@ const SignUp = () => {
                     id="password"
                   />
                   <label
-                  value={passwordError}
                     id="passwordStatus"
                     className="form-label lableStatus"
-                  ></label>
+                  >{passwordError}</label>
                 </div>
               </div>
               <div className="col-12 col-md-4 col-lg-4 px-4">
                 <div className="mb-3">
-                  <label for="exampleInputPassword1" className="form-label">
+                  <label htmlFor="exampleInputPassword1" className="form-label">
                     Date Of Birth
                   </label>
                   <input
@@ -328,15 +325,14 @@ const SignUp = () => {
                     id="dob"
                   />
                   <label
-                  value={DOBError}
                     id="DOBStatus"
                     className="form-label lableStatus"
-                  ></label>
+                  >{DOBError}</label>
                 </div>
               </div>
               <div className="col-12 col-md-4 col-lg-4 px-4">
                 <div className="mb-3">
-                  <label for="exampleInputPassword1" className="form-label">
+                  <label htmlFor="exampleInputPassword1" className="form-label">
                     Address
                   </label>
                   <textarea
@@ -352,15 +348,14 @@ const SignUp = () => {
                     aria-label="With textarea"
                   ></textarea>
                   <label
-                  value={addressError}
                     id="addressStatus"
                     className="form-label lableStatus"
-                  ></label>
+                  >{addressError}</label>
                 </div>
               </div>
               <div className="col-12 col-md-4 col-lg-4 px-4">
                 <div className="mb-3">
-                  <label for="exampleInputPassword1" className="form-label">
+                  <label htmlFor="exampleInputPassword1" className="form-label">
                     City
                   </label>
                   <select
@@ -380,14 +375,13 @@ const SignUp = () => {
                     <option value="Rajkot">Rajkot</option>
                   </select>
                   <label
-                  value={cityError}
                     id="cityStatus"
                     className="form-label lableStatus"
-                  ></label>
+                  >{cityError}</label>
                 </div>
               </div>
               <div className="col-12 col-md-4 col-lg-4 px-4">
-                <label className="form-check-label mb-2" for="exampleCheck1">
+                <label className="form-check-label mb-2" htmlFor="exampleCheck1">
                   Gender
                 </label>
                 <div className="mb-3 d-flex justify-content-between pt-2">
@@ -425,10 +419,9 @@ const SignUp = () => {
                   </div>
                 </div>
                 <label
-                value={genderValueError}
                   id="genderStatus"
                   className="form-label lableStatus"
-                ></label>
+                >{genderValueError}</label>
               </div>
               <div className="col-12 col-md-4 col-lg-4 px-4 align-items-center d-flex">
                 <button
@@ -441,10 +434,9 @@ const SignUp = () => {
               </div>
               <div className="col-12 col-md-4 col-lg-4 px-4 align-items-center d-flex">
                 <label
-                value={error}
                   id="checkStatus"
                   className="form-label checkStatus"
-                ></label>
+                >{error}</label>
               </div>
             </div>
           </form>
